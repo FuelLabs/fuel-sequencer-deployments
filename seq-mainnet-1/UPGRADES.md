@@ -5,7 +5,7 @@
 ## Vesting Accounts Staking
 
 - **Version before upgrade**: `seq-mainnet-1.1`
-- **Version after upgrade**: `seq-mainnet-1.2` (binaries from [here](https://github.com/fuel-infrastructure/networks/tree/main/seq-mainnet-1/binaries))
+- **Version after upgrade**: `seq-mainnet-1.2` (binaries from **_N/A_**)
 - **Upgrade height**: **`370150`**
 - Estimated upgrade time: `2024-12-16 at 15:00:00 CET`
 
@@ -15,7 +15,7 @@
 
 You will need to run through the following steps:
 
-- Download new binary from https://github.com/fuel-infrastructure/networks/tree/main/seq-mainnet-1/binaries or obtain it from a reputable source.
+- Download new binary from **_N/A_** or obtain it from a reputable source.
 - Apply environment variables: `source ~/.profile` (refer to [README](../README.md) if you do not have this).
 - Register the upgrade: `cosmovisor add-upgrade vesting-accounts-staking <path-to-downloaded-fuelsequencerd-binary>`.
 - From here on, the upgrade process is expected to take place automatically.
@@ -24,7 +24,7 @@ You will need to run through the following steps:
 
 The recommended steps to upgrade to the new version without Cosmovisor are as follows:
 
-- Download new binary from https://github.com/fuel-infrastructure/networks/tree/main/seq-mainnet-1/binaries or obtain it from a reputable source.
+- Download new binary from **_N/A_** or obtain it from a reputable source.
 - At the upgrade height, once your node has stopped automatically, back up the `.fuelsequencer` directory, especially the `.fuelsequencer/data/priv_validator_state.json` file.
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.

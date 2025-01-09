@@ -1,16 +1,13 @@
 # Setting up an Account
 
-Clone this repository and navigate into the binaries folder according to the testnet version that you will use:
+Obtain binary from the releases according to the testnet version that you will use:
+
+- https://github.com/FuelLabs/fuel-sequencer-deployments/releases
+
+Download and try the right binary according to your system's architecture:
 
 ```bash
-git clone https://github.com/fuel-infrastructure/networks
-cd networks/seq-testnet-<N>/binaries
-```
-
-Try the right binary according to your system's architecture (`darwin-amd64`, `linux-amd64`, and `linux-arm64` are provided):
-
-```bash
-./fuelsequencerd-seq-testnet-<N>-<ARCH>
+./fuelsequencerd-seq-testnet-<N>-<ARCH> version
 ```
 
 Generate an address with a key name:

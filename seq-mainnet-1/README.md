@@ -127,16 +127,15 @@ To ensure the highest performance and reliability of the Sequencer infrastructur
 
 Obtain binary and genesis from this repository:
 
-```bash
-git clone https://github.com/fuel-infrastructure/networks
-cd networks/seq-mainnet-1
-```
+- Binary from release: https://github.com/FuelLabs/fuel-sequencer-deployments/releases
+- Genesis from here: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/main/seq-mainnet-1/genesis.json
 
-Copy the right binary based on your architecture to `$GOPATH/bin/` with the name `fuelsequencerd`:
+Download the right binary based on your architecture to `$GOPATH/bin/` with the name `fuelsequencerd`:
 
 - `echo $GOPATH` to ensure it exists. If not, `go` might not be installed.
 - `mkdir $GOPATH/bin/` if the directory does not exist.
-- `cp binaries/<binary> $GOPATH/bin/fuelsequencerd`
+- `curl <url/to/binary>` to download the binary.
+- `cp <binary> $GOPATH/bin/fuelsequencerd`
 
 Initialise node directory:
 
