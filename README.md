@@ -1,4 +1,4 @@
-# FuelSequencer Networks
+# Fuel Sequencer Deployments
 
 | Chain ID                         | Type      | Status      |
 |----------------------------------|-----------|-------------|
