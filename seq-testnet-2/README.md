@@ -380,7 +380,7 @@ These are the list of metrics enabled on the Sequencer:
 
 To enable Prometheus metrics on the Sidecar, run the Sidecar startup command with the following flags as parameters:
 
-- `--prometheus-enabled true`
+- `--prometheus_enabled true`
 - (Optional) `--prometheus_listen_address ":8081"`
 
 The enabled metrics will show up at `http://<HOST>:8081`
