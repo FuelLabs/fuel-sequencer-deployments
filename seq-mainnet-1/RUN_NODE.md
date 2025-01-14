@@ -75,7 +75,7 @@ Configure the node (part 2: `~/.fuelsequencer/config/config.toml`):
 
 - Install Cosmovisor: `go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest`.
 - Set environment variables:
-    ```bash
+    ```sh
     echo "# Setup Cosmovisor" >> ~/.profile
     echo "export DAEMON_NAME=fuelsequencerd" >> ~/.profile
     echo "export DAEMON_HOME=$HOME/.fuelsequencer" >> ~/.profile
@@ -120,7 +120,7 @@ You will need to specify at least two comma-separated RPC servers in `rpc_server
 
 Here's an example service file with some placeholder (`<...>`) values:
 
-```bash
+```sh
 [Unit]
 Description=FuelSequencer Validator
 After=network.target

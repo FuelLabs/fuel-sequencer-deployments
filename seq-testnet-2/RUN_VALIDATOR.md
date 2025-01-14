@@ -73,7 +73,7 @@ Configure the node (`~/.fuelsequencer/config/app.toml`):
 
 Here's an example service file with some placeholder (`<...>`) values for the **Sidecar**:
 
-```bash
+```sh
 [Unit]
 Description=FuelSequencer Sidecar
 After=network.target
