@@ -267,12 +267,14 @@ It is specifically very important to ensure that you provide all the necessary f
 
 ### Joining Post-Genesis
 
-> Note: you can have a look at the option of using State Sync to get synced up faster: https://fuel-seq.simplystaking.xyz/fuel-mainnet/statesync
-
 Assumptions:
 
 1. You are already running a full Sequencer node with a Sidecar, by following the above instructions.
 2. The account being used to create your validator has at least 1FUEL, with enough extra to pay for gas.
+
+You should have a look at [the option of using State Sync](https://fuel-seq.simplystaking.xyz/fuel-mainnet/statesync) to get synced up faster. Note that:
+
+- You will need to specify at least two comma-separated RPC servers. You can either refer to the list of alternate RPC servers above or use the same one twice.
 
 To create the validator, run:
 
