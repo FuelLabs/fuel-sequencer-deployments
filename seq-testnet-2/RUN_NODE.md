@@ -2,6 +2,7 @@
 
 - [Prerequisites](#prerequisites)
 - [Run the Node](#run-the-node)
+- [References](#references)
 
 ## Prerequisites
 
