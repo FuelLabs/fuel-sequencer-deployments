@@ -22,6 +22,10 @@ Useful links:
 - **API docs**: https://testnet-rest-fuel-seq.simplystaking.xyz/swagger/
 - **Indexer**: http://testnet-indexer-fuel-seq.simplystaking.xyz
 
+Alternate public nodes:
+
+- **Public RPC**: https://fuel-testnet-rpc.polkachu.com
+
 For a list of historical Sequencer upgrades, refer to the [upgrades doc](./UPGRADES.md).
 
 ## Run the Sequencer
