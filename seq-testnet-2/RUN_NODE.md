@@ -2,6 +2,9 @@
 
 - [Prerequisites](#prerequisites)
 - [Run the Node](#run-the-node)
+  - [Install Cosmovisor](#install-cosmovisor)
+  - [Configure State Sync](#configure-state-sync)
+  - [Running the Sequencer](#running-the-sequencer)
 - [References](#references)
 
 ## Prerequisites
@@ -50,7 +53,25 @@ Copy the downloaded genesis file to `~/.fuelsequencer/config/genesis.json`:
 cp <path/to/genesis.json> ~/.fuelsequencer/config/genesis.json
 ```
 
-Install and configure Cosmovisor:
+Configure the node (part 1: `~/.fuelsequencer/config/app.toml`):
+
+- Set `minimum-gas-prices = "10fuel"`.
+- Configure `[sidecar]`:
+  - Ensure that `enabled = false`.
+
+Configure the node (part 2: `~/.fuelsequencer/config/config.toml`):
+
+- Configure `[p2p]`:
+  - Set `persistent_peers = "3a0b4118c01addd33d5add81783805d5add2fb17@80.64.208.17:26656"`.
+- Configure `[mempool]`:
+  - Set `max_tx_bytes = 1153434` (1.1MiB)
+  - Set `max_txs_bytes = 23068670` (~22MiB)
+- Configure `[rpc]`:
+  - Set `max_body_bytes = 1153434` (optional - relevant for public RPC).
+
+> Note: Ensuring consistent CometBFT mempool parameters across all network nodes is important to reduce transaction delays. This includes `mempool.size`, `mempool.max_txs_bytes`, and `mempool.max_tx_bytes` in [config.toml](https://docs.cometbft.com/v0.38/core/configuration) and `minimum-gas-prices` in [app.toml](https://docs.cosmos.network/main/learn/advanced/config), as pointed out above.
+
+### Install Cosmovisor
 
 - Install Cosmovisor: `go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest`.
 - Set environment variables:
@@ -70,31 +91,32 @@ Install and configure Cosmovisor:
 - You can also repeat the above steps but for `~/.bashrc` instead of `~/.profile`.
 - Initialise Cosmovisor directories: `cosmovisor init <path/to/fuelsequencerd/binary>` (hint: `whereis fuelsequencerd` for the path).
 
-Configure the node (part 1: `~/.fuelsequencer/config/app.toml`):
+At this point `cosmovisor run` will be the equivalent of running `fuelsequencerd`, however you should not run the node before following the remaining steps.
 
-- Set `minimum-gas-prices = "10fuel"`.
-- Configure `[sidecar]`:
-  - Ensure that `enabled = false`.
+### Configure State Sync
 
-Configure the node (part 2: `~/.fuelsequencer/config/config.toml`):
+State Sync allows a node to get synced up quickly.
 
-- Configure `[p2p]`:
-  - Set `persistent_peers = "3a0b4118c01addd33d5add81783805d5add2fb17@80.64.208.17:26656"`.
-- Configure `[mempool]`:
-  - Set `max_tx_bytes = 1153434` (1.1MiB)
-  - Set `max_txs_bytes = 23068670` (~22MiB)
-- Configure `[rpc]`:
-  - Set `max_body_bytes = 1153434` (optional - relevant for public RPC).
+To configure State Sync, you will need to set these values in `~/.fuelsequencer/config/config.toml` under `[statesync]`:
 
-> Note: Ensuring consistent CometBFT mempool parameters across all network nodes is important to reduce transaction delays. This includes `mempool.size`, `mempool.max_txs_bytes`, and `mempool.max_tx_bytes` in [config.toml](https://docs.cometbft.com/v0.38/core/configuration) and `minimum-gas-prices` in [app.toml](https://docs.cosmos.network/main/learn/advanced/config), as pointed out above.
+- `enable = true` to enable State Sync
+- `rpc_servers`
+- `trust_height`
+- `trust_hash`
 
-Configure [State Sync](https://fuel-seq.simplystaking.xyz/fuel-testnet/statesync) to get synced up faster. Note that:
+The last three values should be obtained from [the explorer](https://fuel-seq.simplystaking.xyz/fuel-mainnet/statesync).
 
-- You will need to specify at least two comma-separated RPC servers. You can either refer to the list of alternate RPC servers above or use the same one twice.
+You will need to specify at least two comma-separated RPC servers in `rpc_servers`. You can either refer to the list of alternate RPC servers above or use the same one twice.
 
-At this point `cosmovisor run` will be the equivalent of running `fuelsequencerd`. In fact, to run the node you can use `cosmovisor run start`.
+### Running the Sequencer
 
-**It is highly recommended to run the Sequencer as a service**, so that it can run in the background. You will need to replicate the environment variables defined above.
+**It is highly recommended to run the Sequencer as a managed service**, so that it can run in the background. You will need to replicate the environment variables defined when setting up Cosmovisor.
+
+#### Mac
+
+**TODO**
+
+#### Linux
 
 Here's an example service file with some placeholder (`<...>`) values:
 

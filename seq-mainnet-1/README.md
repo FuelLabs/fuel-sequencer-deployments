@@ -34,9 +34,9 @@ For a list of historical Sequencer upgrades, refer to the [upgrades doc](./UPGRA
 There are two main options for running a Sequencer node:
 
 - Run a Sequencer Full Node (non-Validator).
-- Run a Sequencer Validator with Sidecar, which requires a connection to an Ethereum node.
+- Run a Sequencer Validator, which requires you to run a Sidecar and an Ethereum node.
 
-The first steps for both cases are the same, and can be found in the [Run a Sequencer Node](./RUN_NODE.md) document.
+The first steps for both cases are the same, and can be found in the [Run Sequencer Node](./RUN_NODE.md) document. Afterward, to continue the steps towards running a validator, refer to the [Run Sequencer Validator](./RUN_VALIDATOR.md) document.
 
 ## Monitoring
 
