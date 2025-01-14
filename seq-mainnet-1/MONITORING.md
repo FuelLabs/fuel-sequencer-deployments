@@ -1,11 +1,11 @@
-## Monitoring
+# Monitoring
 
 Both the Sequencer and the Sidecar come with a set of metrics that can be exposed via Prometheus out-of-the-box.
 
 - [Sequencer](#sequencer)
 - [Sidecar](#sidecar)
 
-### Sequencer
+## Sequencer
 
 To enable prometheus metrics on the Sequencer set the following in your configurations:
 
@@ -35,7 +35,7 @@ These are the list of metrics enabled on the Sequencer:
 
 > Note: The metrics above were not described in detail because Sequencer metrics are primarily intended for the Sequencer maintainers.
 
-### Sidecar
+## Sidecar
 
 To enable Prometheus metrics on the Sidecar, run the Sidecar startup command with the following flags as parameters:
 

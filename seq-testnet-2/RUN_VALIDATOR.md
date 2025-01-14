@@ -106,7 +106,7 @@ It is specifically very important to ensure that you provide all the necessary f
 
 ## Creating an Account
 
-Generate an address with a key name:
+To run a validator, you will need to have a Sequencer account address. Generate an address with a key name:
 
 ```sh
 fuelsequencerd keys add <NAME> # for a brand new key
@@ -131,17 +131,21 @@ bytes: FF8162F37072354EB1E222084DA0D4221E93550F
 human: fuelsequencer
 ```
 
-Adding the `0x` prefix to the address in the first line gives you your Ethereum-compatible address, used to deposit into and interact iwht your Sequencer address from Ethereum.
+Adding the `0x` prefix to the address in the first line gives you your Ethereum-compatible address, used to deposit into and interact with your Sequencer address from Ethereum. In this case, it's `0xFF8162F37072354EB1E222084DA0D4221E93550F`.
 
 > **WARNING**: always test transfer small amounts first if you are going to bridge FUEL tokens to this Ethereum-compatible address.
 
 ## Create the Validator
 
-To create the validator, run:
+To create the validator, a prerequisite is to have at least 1FUEL, with enough extra to pay for gas fees. You can check your balance from the explorer.
+
+[//]: # (TODO: steps on how to deposit FUEL tokens to a Sequencer address)
+
+Once you have FUEL tokens, run the following to create a validator, using the name of the account that you created in the previous steps:
 
 ```sh
-fuel-sequencerd tx staking create-validator path/to/validator.json \
-    --from keyname \
+fuelsequencerd tx staking create-validator path/to/validator.json \
+    --from <NAME> \
     --gas auto \
     --gas-prices 10fuel \
     --gas-adjustment 1.5 \
