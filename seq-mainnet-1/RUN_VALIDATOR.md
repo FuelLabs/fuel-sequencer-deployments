@@ -7,7 +7,6 @@
 - [Run a Sidecar](#run-a-sidecar)
 - [Creating an Account](#creating-an-account)
 - [Create the Validator](#create-the-validator)
-  - [Joining Post-Genesis](#joining-post-genesis)
   - [What to Expect](#what-to-expect)
   - [Tendermint KMS](#tendermint-kms)
   - [Additional Advanced Configuration](#additional-advanced-configuration)
