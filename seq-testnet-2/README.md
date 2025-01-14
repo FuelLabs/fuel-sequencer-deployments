@@ -31,6 +31,10 @@ Useful links:
 - **API docs**: https://testnet-rest-fuel-seq.simplystaking.xyz/swagger/
 - **Indexer**: http://testnet-indexer-fuel-seq.simplystaking.xyz
 
+Alternate public nodes:
+
+- **Public RPC**: https://fuel-testnet-rpc.polkachu.com
+
 Indexer:
 
 - `/seq/withdrawals?address=ADDRESS` ([example](http://testnet-indexer-fuel-seq.simplystaking.xyz/seq/withdrawals?address=0x0165878A594ca255338adfa4d48449f69242Eb8F))
