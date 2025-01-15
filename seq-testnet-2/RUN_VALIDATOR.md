@@ -80,7 +80,7 @@ It is also very important to ensure that you provide all the necessary flags whe
 - `port`: port for the gRPC server to listen on
 - `eth_ws_url`: Ethereum node WebSocket endpoint
 - `eth_rpc_url`: Ethereum node RPC endpoint
-- `eth_contract_address`: address in hex format of the contract to monitor for logs
+- `eth_contract_address`: address in hex format of the contract to monitor for logs.  This MUST be set to `0x0E5CAcD6899a1E2a4B4E6e0c8a1eA7feAD3E25eD`.
 - `sequencer_grpc_url`: Sequencer node gRPC endpoint
 
 ### Linux
