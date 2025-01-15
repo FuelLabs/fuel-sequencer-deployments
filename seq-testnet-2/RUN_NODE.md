@@ -55,7 +55,7 @@ cp <path/to/genesis.json> ~/.fuelsequencer/config/genesis.json
 
 Configure the node (part 1: `~/.fuelsequencer/config/app.toml`):
 
-- Set `minimum-gas-prices = "10fuel"`.
+- Set `minimum-gas-prices = "10test"`.
 - Configure `[sidecar]`:
   - Ensure that `enabled = false`.
 

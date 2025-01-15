@@ -205,21 +205,21 @@ human: fuelsequencer
 
 Adding the `0x` prefix to the address in the first line gives you your Ethereum-compatible address, used to deposit into and interact with your Sequencer address from Ethereum. In this case, it's `0xFF8162F37072354EB1E222084DA0D4221E93550F`.
 
-> **WARNING**: always test transfer small amounts first if you are going to bridge FUEL tokens to this Ethereum-compatible address.
+> **WARNING**: always test transfer small amounts first if you are going to bridge TEST tokens to this Ethereum-compatible address.
 
 ## Create the Validator
 
-To create the validator, a prerequisite is to have at least 1FUEL, with enough extra to pay for gas fees. You can check your balance from the explorer.
+To create the validator, a prerequisite is to have at least 1TEST, with enough extra to pay for gas fees. You can check your balance from the explorer.
 
-[//]: # (TODO: steps on how to deposit FUEL tokens to a Sequencer address)
+[//]: # (TODO: steps on how to deposit TEST tokens to a Sequencer address)
 
-Once you have FUEL tokens, run the following to create a validator, using the name of the account that you created in the previous steps:
+Once you have TEST tokens, run the following to create a validator, using the name of the account that you created in the previous steps:
 
 ```sh
 fuelsequencerd tx staking create-validator path/to/validator.json \
     --from <NAME> \
     --gas auto \
-    --gas-prices 10fuel \
+    --gas-prices 10test \
     --gas-adjustment 1.5 \
     --chain-id seq-testnet-2
 ```
@@ -229,7 +229,7 @@ fuelsequencerd tx staking create-validator path/to/validator.json \
 ```json
 {
 	"pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"<PUBKEY>"},
-	"amount": "1000000000fuel",
+	"amount": "1000000000test",
 	"moniker": "<MONIKER>",
 	"identity": "<OPTIONAL-IDENTITY>",
 	"website": "<OPTIONAL-WEBSITE>",
