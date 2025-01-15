@@ -32,7 +32,7 @@ Download the right binary based on your architecture to `$GOPATH/bin/` with the 
 
 - `echo $GOPATH` to ensure it exists. If not, `go` might not be installed.
 - `mkdir $GOPATH/bin/` if the directory does not exist.
-- `wget <url/to/binary>` to download the binary.
+- `wget <url/to/binary>` to download the binary, or any equivalent approach.
 - `cp <binary> $GOPATH/bin/fuelsequencerd`
 
 Try the binary:
@@ -41,7 +41,7 @@ Try the binary:
 fuelsequencerd version  # expect seq-mainnet-1.2-improved-sidecar
 ```
 
-Initialise node directory:
+Initialise the node directory, giving your node a meaningful name:
 
 ```sh
 fuelsequencerd init <node-name> --chain-id seq-mainnet-1
@@ -73,25 +73,61 @@ Configure the node (part 2: `~/.fuelsequencer/config/config.toml`):
 
 ### Install Cosmovisor
 
-- Install Cosmovisor: `go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest`.
-- Set environment variables:
-    ```sh
-    echo "# Setup Cosmovisor" >> ~/.profile
-    echo "export DAEMON_NAME=fuelsequencerd" >> ~/.profile
-    echo "export DAEMON_HOME=$HOME/.fuelsequencer" >> ~/.profile
-    echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
-    echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
-    echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.profile
-    echo "export UNSAFE_SKIP_BACKUP=true" >> ~/.profile
-    echo "export DAEMON_SHUTDOWN_GRACE=15s" >> ~/.profile
-  
-    # Check https://docs.cosmos.network/main/tooling/cosmovisor for more configuration options.
-    ```
-- Apply environment variables: `source ~/.profile`.
-- You can also repeat the above steps but for `~/.bashrc` instead of `~/.profile`.
-- Initialise Cosmovisor directories: `cosmovisor init <path/to/fuelsequencerd/binary>` (hint: `whereis fuelsequencerd` for the path).
+To install Cosmovisor, run `go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest`
 
-At this point `cosmovisor run` will be the equivalent of running `fuelsequencerd`, however you should not run the node before following the remaining steps.
+Set the environment variables:
+
+<details>
+  <summary>If you're running on a zsh terminal...</summary>
+
+  ```zsh
+  echo "# Setup Cosmovisor" >> ~/.zshrc
+  echo "export DAEMON_NAME=fuelsequencerd" >> ~/.zshrc
+  echo "export DAEMON_HOME=$HOME/.fuelsequencer" >> ~/.zshrc
+  echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.zshrc
+  echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.zshrc
+  echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.zshrc
+  echo "export UNSAFE_SKIP_BACKUP=true" >> ~/.zshrc
+  echo "export DAEMON_SHUTDOWN_GRACE=15s" >> ~/.zshrc
+  
+  # You can check https://docs.cosmos.network/main/tooling/cosmovisor for more configuration options.
+  ```
+
+  Apply to your current session: `source ~/.zshrc`
+</details>
+
+<details>
+  <summary>If you're running on a bash terminal...</summary>
+
+  ```zsh
+  echo "# Setup Cosmovisor" >> ~/.bashrc
+  echo "export DAEMON_NAME=fuelsequencerd" >> ~/.bashrc
+  echo "export DAEMON_HOME=$HOME/.fuelsequencer" >> ~/.bashrc
+  echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.bashrc
+  echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.bashrc
+  echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.bashrc
+  echo "export UNSAFE_SKIP_BACKUP=true" >> ~/.bashrc
+  echo "export DAEMON_SHUTDOWN_GRACE=15s" >> ~/.bashrc
+  
+  # You can check https://docs.cosmos.network/main/tooling/cosmovisor for more configuration options.
+  ```
+
+  Apply to your current session: `source ~/.bashrc`
+</details>
+
+You can now test that cosmovisor was installed properly:
+
+```sh
+cosmovisor version
+```
+
+Initialise Cosmovisor directories (hint: `whereis fuelsequencerd` for the path):
+
+```sh
+cosmovisor init <path/to/fuelsequencerd>
+```
+
+At this point `cosmovisor run` will be the equivalent of running `fuelsequencerd`, however you should _not_ run the node for now.
 
 ### Configure State Sync
 
@@ -110,31 +146,34 @@ You will need to specify at least two comma-separated RPC servers in `rpc_server
 
 ### Running the Sequencer
 
-**It is highly recommended to run the Sequencer as a managed service**, so that it can run in the background. You will need to replicate the environment variables defined when setting up Cosmovisor.
+At this point you should already be able to run `cosmovisor run start` to run the Sequencer. However, **it is highly recommended to run the Sequencer as a background service**.
 
-#### Mac
-
-**TODO**
+Some examples are provided below for Linux and Mac. You will need to replicate the environment variables defined when setting up Cosmovisor.
 
 #### Linux
 
-Here's an example service file with some placeholder (`<...>`) values:
+On Linux, you can use `systemd` to run the Sequencer in the background. Knowledge of how to use `systemd` is assumed here.
+
+Here's an example service file with some placeholder (`<...>`) values that must be filled-in:
+
+<details>
+  <summary>Click me...</summary>
 
 ```sh
 [Unit]
-Description=FuelSequencer Validator
+Description=Sequencer Node
 After=network.target
 
 [Service]
 Type=simple
 User=<USER>
-ExecStart=<HOME>/go/bin/cosmovisor run start --home <NODE-HOME>
+ExecStart=/home/<USER>/go/bin/cosmovisor run start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
 
 Environment="DAEMON_NAME=fuelsequencerd"
-Environment="DAEMON_HOME=/home/<USER>/.fuelsequencer"  # Double-check this!
+Environment="DAEMON_HOME=/home/<USER>/.fuelsequencer"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
@@ -144,6 +183,73 @@ Environment="DAEMON_SHUTDOWN_GRACE=15s"
 [Install]
 WantedBy=multi-user.target
 ```
+</details>
+
+#### Mac
+
+On Mac, you can use `launchd` to run the Sequencer in the background. Knowledge of how to use `launchd` is assumed here.
+
+Here's an example plist file with some placeholder (`[...]`) values that must be filled-in:
+
+<details>
+  <summary>Click me...</summary>
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>fuel.sequencer</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/[User]/go/bin/cosmovisor</string>
+        <string>run</string>
+        <string>start</string>
+    </array>
+
+    <key>UserName</key>
+    <string>[User]</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>DAEMON_NAME</key>
+        <string>fuelsequencerd</string>
+        <key>DAEMON_HOME</key>
+        <string>/Users/[User]/.fuelsequencer</string>
+        <key>DAEMON_ALLOW_DOWNLOAD_BINARIES</key>
+        <string>true</string>
+        <key>DAEMON_LOG_BUFFER_SIZE</key>
+        <string>512</string>
+        <key>DAEMON_RESTART_AFTER_UPGRADE</key>
+        <string>true</string>
+        <key>UNSAFE_SKIP_BACKUP</key>
+        <string>true</string>
+        <key>DAEMON_SHUTDOWN_GRACE</key>
+        <string>15s</string>
+    </dict>
+
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+
+    <key>HardResourceLimits</key>
+    <dict>
+        <key>NumberOfFiles</key>
+        <integer>4096</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/[User]/Library/Logs/fuel-sequencer.out</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/[User]/Library/Logs/fuel-sequencer.err</string>
+</dict>
+</plist>
+```
+</details>
 
 ## References
 

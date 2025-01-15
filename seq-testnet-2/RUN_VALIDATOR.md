@@ -4,7 +4,8 @@
 - [Prerequisites](#prerequisites)
 - [Run an Ethereum Sepolia Node](#run-an-ethereum-sepolia-full-node)
 - [Further Sequencer Configurations](#further-sequencer-configurations)
-- [Run a Sidecar](#run-a-sidecar)
+- [Run the Sidecar](#run-the-sidecar)
+- [Restart the Sequencer](#restart-the-sequencer)
 - [Creating an Account](#creating-an-account)
 - [Create the Validator](#create-the-validator)
   - [What to Expect](#what-to-expect)
@@ -69,13 +70,31 @@ Configure the node (`~/.fuelsequencer/config/app.toml`):
 
 > **WARNING**: leaving the `[commitments]` API accessible to anyone can lead to DoS! It is highly recommended to handle whitelisting or authentication by a reverse proxy like [Traefik](https://traefik.io/traefik/) for gRPC if the commitments API is enabled.
 
-## Run a Sidecar
+## Run the Sidecar
 
-Here's an example service file with some placeholder (`<...>`) values for the **Sidecar**:
+At this point you should already be able to run `fuelsequencerd start-sidecar` with the right flags, to run the Sidecar. However, **it is highly recommended to run the Sidecar as a background service**.
+
+It is also very important to ensure that you provide all the necessary flags when running the Sidecar to ensure that it can connect to an Ethereum node and to the Sequencer node, and is also accessible by the Sequencer node. The most important flags are:
+
+- `host`: host for the gRPC server to listen on
+- `port`: port for the gRPC server to listen on
+- `eth_ws_url`: Ethereum node WebSocket endpoint
+- `eth_rpc_url`: Ethereum node RPC endpoint
+- `eth_contract_address`: address in hex format of the contract to monitor for logs
+- `sequencer_grpc_url`: Sequencer node gRPC endpoint
+
+### Linux
+
+On Linux, you can use `systemd` to run the Sequencer in the background. Knowledge of how to use `systemd` is assumed here.
+
+Here's an example service file with some placeholder (`<...>`) values that must be filled-in:
+
+<details>
+  <summary>Click me...</summary>
 
 ```sh
 [Unit]
-Description=FuelSequencer Sidecar
+Description=Sidecar
 After=network.target
 
 [Service]
@@ -94,15 +113,68 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 ```
+</details>
 
-It is specifically very important to ensure that you provide all the necessary flags when running the Sidecar to ensure that it can connect to an Ethereum node and to the Sequencer node, and is also accessible by the Sequencer node. The most important flags are:
+### Mac
 
-- `host`: host for the gRPC server to listen on
-- `port`: port for the gRPC server to listen on
-- `eth_ws_url`: Ethereum node WebSocket endpoint
-- `eth_rpc_url`: Ethereum node RPC endpoint
-- `eth_contract_address`: address in hex format of the contract to monitor for logs
-- `sequencer_grpc_url`: Sequencer node gRPC endpoint
+On Mac, you can use `launchd` to run the Sequencer in the background. Knowledge of how to use `launchd` is assumed here.
+
+Here's an example plist file with some placeholder (`[...]`) values that must be filled-in:
+
+<details>
+  <summary>Click me...</summary>
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>fuel.sidecar</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/[User]/go/bin/fuelsequencerd</string>
+        <string>start-sidecar</string>
+        <string>--host</string>
+        <string>0.0.0.0</string>
+        <string>--sequencer_grpc_url</string>
+        <string>127.0.0.1:9090</string>
+        <string>--eth_ws_url</string>
+        <string>[ETHEREUM_NODE_WS]</string>
+        <string>--eth_rpc_url</string>
+        <string>[ETHEREUM_NODE_RPC]</string>
+        <string>--eth_contract_address</string>
+        <string>0x0E5CAcD6899a1E2a4B4E6e0c8a1eA7feAD3E25eD</string>
+    </array>
+
+    <key>UserName</key>
+    <string>[User]</string>
+
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+
+    <key>HardResourceLimits</key>
+    <dict>
+        <key>NumberOfFiles</key>
+        <integer>4096</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/[User]/Library/Logs/fuel-sidecar.out</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/[User]/Library/Logs/fuel-sidecar.err</string>
+</dict>
+</plist>
+```
+</details>
+
+## Restart the Sequencer
+
+Assuming your Sequencer node is already running, it should be restarted at this point given that we have reconfigured some values.
 
 ## Creating an Account
 
