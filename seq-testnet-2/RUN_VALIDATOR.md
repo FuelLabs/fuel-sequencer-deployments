@@ -246,7 +246,8 @@ fuelsequencerd tx staking create-validator path/to/validator.json \
 
 ### What to Expect
 
-The Sequencer should show block generation, and the Sidecar should show block extraction.
+- The Sequencer should show block syncing.
+- The Sidecar should show block extraction. Occasionally it also receives requests for events.
 
 ### Tendermint KMS
 

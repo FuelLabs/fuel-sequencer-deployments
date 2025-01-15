@@ -136,11 +136,11 @@ State Sync allows a node to get synced up quickly.
 To configure State Sync, you will need to set these values in `~/.fuelsequencer/config/config.toml` under `[statesync]`:
 
 - `enable = true` to enable State Sync
-- `rpc_servers`
-- `trust_height`
-- `trust_hash`
+- `rpc_servers = ...`
+- `trust_height = ...`
+- `trust_hash = ...`
 
-The last three values should be obtained from [the explorer](https://fuel-seq.simplystaking.xyz/fuel-mainnet/statesync).
+The last three values can be obtained from [the explorer](https://fuel-seq.simplystaking.xyz/fuel-mainnet/statesync).
 
 You will need to specify at least two comma-separated RPC servers in `rpc_servers`. You can either refer to the list of alternate RPC servers above or use the same one twice.
 
