@@ -5,13 +5,13 @@
 ## Vesting Accounts Staking
 
 - **Version before upgrade**: `seq-mainnet-1.1`
-- **Version after upgrade**: `seq-mainnet-1.2` (binaries from **_N/A_**)
+- **Version after upgrade**: `seq-mainnet-1.2`
 - **Upgrade height**: **`370150`**
 - Estimated upgrade time: `2024-12-16 at 15:00:00 CET`
 
 ### Upgrade Instructions (with Cosmovisor)
 
-> Note: the `DAEMON_ALLOW_DOWNLOAD_BINARIES` option is not possible since the binaries are not public. This means that the binary will NOT be downloaded automatically!
+> Note: the `DAEMON_ALLOW_DOWNLOAD_BINARIES` option is not possible. This means that the binary will NOT be downloaded automatically!
 
 You will need to run through the following steps:
 
