@@ -33,12 +33,12 @@ For a list of historical Sequencer upgrades, refer to the [upgrades doc](./UPGRA
 
 > **NOTE**: the guides assume some knowledge around running Cosmos SDK based nodes. It is highly recommended to familiarise yourself with this type of node operation before running a Fuel Sequencer node.
 
-There are two main options for running the Sequencer:
+These are the main options for running the Sequencer:
 
-- Run a Sequencer Full Node (non-Validator).
-- Run a Sequencer Validator, which requires you to run a Sidecar and an Ethereum node as well.
+- [Run a Sequencer Full Node (non-Validator)](./RUN_NODE.md)
+- [Run a Sequencer Validator, which requires you to run a Sidecar and an Ethereum node as well](./RUN_VALIDATOR.md).
 
-The first steps for both cases are the same, and can be found in the [Run Sequencer Node](./RUN_NODE.md) document. Afterward, to continue the steps towards running a validator, refer to the [Run Sequencer Validator](./RUN_VALIDATOR.md) document.
+> **IMPORTANT**: If you are running a validator in a sentry node architecture, you should follow the validator guide when setting up the sentry nodes as well. This is especially because your sentry nodes should be connected to a Sidecar as well. Otherwise, your validator's performance might suffer.
 
 ## Monitoring
 
