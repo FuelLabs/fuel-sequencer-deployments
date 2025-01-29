@@ -27,7 +27,7 @@ Ensure that the withdrawal passed by checking the explorer:
 
 > **At this point you will need to wait at least 56 hours for the withdrawal to be processable on Ethereum!**
 
-After waiting for 56 hours, check that `IsProvable` is true:
+After waiting for 56 hours, check that `IsProvable` is true, making sure to fill in the placeholder value:
 
 - `https://indexer-fuel-seq.simplystaking.xyz/seq/withdrawals?address=<ETHEREUM-ADDRESS>&pending=true`
 
