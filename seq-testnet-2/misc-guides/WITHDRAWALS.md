@@ -1,4 +1,4 @@
-# Withdraw from the Sequencer Testnet
+# Manual Process for Withdrawing Tokens from the Sequencer Testnet
 
 Check balance:
 

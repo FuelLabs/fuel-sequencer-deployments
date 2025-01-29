@@ -1,4 +1,4 @@
-# Withdraw from the Sequencer Mainnet
+# Manual Process for Withdrawing Tokens from the Sequencer Mainnet
 
 Check balance:
 
