@@ -26,6 +26,7 @@ Alternate public nodes:
 
 - **Public RPC**: https://fuel-rpc.polkachu.com
 - **Public RPC**: https://rpc-fuel.kintsugi-nodes.com
+- **Public RPC**: https://rpc.fuel.cumulo.com.es
 
 For a list of historical Sequencer upgrades, refer to the [upgrades doc](./UPGRADES.md).
 
