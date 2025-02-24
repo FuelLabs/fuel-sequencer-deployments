@@ -424,7 +424,7 @@ bytes: FF8162F37072354EB1E222084DA0D4221E93550F
 human: fuelsequencer
 ```
 
-Adding the `0x` prefix to the address in the first line gives you your Ethereum-compatible address, used to deposit into and interact with your Sequencer address from Ethereum. In this case, it's `0xFF8162F37072354EB1E222084DA0D4221E93550F`.
+Adding the `0x` prefix to the address in the first line gives you your Ethereum-compatible address, used to deposit into and interact with your Sequencer address from Ethereum. In this case, it's `0xFF8162F37072354EB1E222084DA0D4221E93550F`. To fund your Ethereum-compatible address with Fuel tokens from Ethereum you can use the [DepositFor](https://sepolia.etherscan.io/address/0x742C478a1951257E83d3aC8f3DFB3A8e6AB9a2E4#writeProxyContract#F6) function with `recipient` set to your Ethereum-compatible address, in this example `0xFF8162F37072354EB1E222084DA0D4221E93550F`.
 
 > **WARNING**: always test transfer small amounts first if you are going to bridge TEST tokens to this Ethereum-compatible address.
 
