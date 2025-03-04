@@ -22,11 +22,12 @@ Useful links:
 - **API docs**: https://rest-fuel-seq.simplystaking.xyz/swagger/
 - **Indexer**: https://indexer-fuel-seq.simplystaking.xyz
 
-Alternate public nodes:
+Alternate public nodes and services:
 
 - **Public RPC**: https://fuel-rpc.polkachu.com
 - **Public RPC**: https://rpc-fuel.kintsugi-nodes.com
 - **Public RPC**: https://rpc.fuel.cumulo.com.es
+- **Services**: https://itrocket.net/services/mainnet/fuel/
 
 For a list of historical Sequencer upgrades, refer to the [upgrades doc](./UPGRADES.md).
 
