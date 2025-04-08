@@ -21,6 +21,7 @@
 You will need to run through the following steps:
 
 - Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.2) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.2`.
 - Apply environment variables: `source ~/.profile` (refer to [README](../README.md) if you do not have this).
 - Register the upgrade: `cosmovisor add-upgrade features-and-optimisations <path-to-downloaded-fuelsequencerd-binary>`.
 - From here on, the upgrade process is expected to take place automatically.
@@ -30,6 +31,7 @@ You will need to run through the following steps:
 The recommended steps to upgrade to the new version without Cosmovisor are as follows:
 
 - Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.2) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.2`.
 - At the upgrade height, once your node has stopped automatically, back up the `.fuelsequencer` directory, especially the `.fuelsequencer/data/priv_validator_state.json` file.
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.
@@ -39,6 +41,7 @@ The recommended steps to upgrade to the new version without Cosmovisor are as fo
 It is critical to switch to use the new binary for the Sidecar as well. You will need to follow these steps:
 
 - Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.2) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.2`.
 - Before the upgrade height (i.e. you can do it NOW):
   - Stop the Sidecar process.
   - Swap the old binary with the downloaded binary.
