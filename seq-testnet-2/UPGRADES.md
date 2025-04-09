@@ -42,7 +42,7 @@ It is critical to switch to use the new binary for the Sidecar as well. You will
 
 - Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.2) or obtain it from a reputable source.
 - You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.2`.
-- Before the upgrade height (i.e. you can do it NOW):
+- Before the upgrade height (i.e. you can do it NOW since the sidecar is backwards compatible):
   - Stop the Sidecar process.
   - Swap the old binary with the downloaded binary.
   - Restart the Sidecar process.
