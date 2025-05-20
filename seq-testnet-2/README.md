@@ -8,7 +8,7 @@
 
 - **Chain ID**: `seq-testnet-2`
 - **Launch date**: 2024-12-04
-- **Current binary version**: `seq-testnet-2` or `seq-testnet-2-improved-sidecar`
+- **Current binary version**: `seq-testnet-2.2`
 - **Launch binary version**: `seq-testnet-2`
 - **Genesis file**: [genesis.json in this folder](./genesis.json).
 - **Minimum gas price**: `10test`
