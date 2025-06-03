@@ -1,13 +1,9 @@
 # Scheduled Upgrades
 
-- [Vesting Accounts Staking](#vesting-accounts-staking)
-
-## Vesting Accounts Staking
-
-- **Version before upgrade**: `seq-mainnet-1.1`
-- **Version after upgrade**: `seq-mainnet-1.2`
-- **Upgrade height**: **`370150`**
-- Estimated upgrade time: `2024-12-16 at 15:00:00 CET`
+- **Version before upgrade**: `seq-mainnet-1.2` or `seq-mainnet-1.2-improved-sidecar`
+- **Version after upgrade**: `seq-mainnet-1.3`
+- **Upgrade height**: **`2988700`**
+- **Estimated upgrade time**: `2025-06-09 15:00:00 CET`
 
 ### Upgrade Instructions (with Cosmovisor)
 
@@ -15,16 +11,16 @@
 
 You will need to run through the following steps:
 
-- Download new binary from **_N/A_** or obtain it from a reputable source.
+- Download the binary [from the appropriate release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases) or obtain it from a reputable source.
 - Apply environment variables: `source ~/.profile` (refer to [README](../README.md) if you do not have this).
-- Register the upgrade: `cosmovisor add-upgrade vesting-accounts-staking <path-to-downloaded-fuelsequencerd-binary>`.
+- Register the upgrade: `cosmovisor add-upgrade features-and-optimisations <path-to-downloaded-fuelsequencerd-binary>`.
 - From here on, the upgrade process is expected to take place automatically.
 
 ### Upgrade Instructions (without Cosmovisor)
 
 The recommended steps to upgrade to the new version without Cosmovisor are as follows:
 
-- Download new binary from **_N/A_** or obtain it from a reputable source.
+- Download the binary [from the appropriate release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases) or obtain it from a reputable source.
 - At the upgrade height, once your node has stopped automatically, back up the `.fuelsequencer` directory, especially the `.fuelsequencer/data/priv_validator_state.json` file.
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.
