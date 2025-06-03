@@ -1,37 +1,53 @@
 # Scheduled Upgrades
 
-- [Vesting Accounts Staking](#vesting-accounts-staking)
+- [Features and Optimisations](#features-and-optimisations)
+  - [Node Upgrade Instructions](#node-upgrade-instructions)
+    - [With Cosmovisor](#with-cosmovisor)
+    - [Without Cosmovisor](#without-cosmovisor)
+  - [Sidecar Upgrade Instructions](#sidecar-upgrade-instructions)
+  - [Recovery](#recovery)
 
-## Vesting Accounts Staking
+## Features and Optimisations
 
-- **Version before upgrade**: `seq-mainnet-1.1`
-- **Version after upgrade**: `seq-mainnet-1.2`
-- **Upgrade height**: **`370150`**
-- Estimated upgrade time: `2024-12-16 at 15:00:00 CET`
+- **Version before upgrade**: `seq-mainnet-1.2` or `seq-mainnet-1.2-improved-sidecar`
+- **Version after upgrade**: `seq-mainnet-1.3`
+- **Upgrade height**: **`2988700`**
+- **Estimated upgrade time**: `2025-06-09 15:00:00 CET`
 
-### Upgrade Instructions (with Cosmovisor)
+### Node Upgrade Instructions
+
+#### With Cosmovisor
 
 > Note: the `DAEMON_ALLOW_DOWNLOAD_BINARIES` option is not possible. This means that the binary will NOT be downloaded automatically!
 
 You will need to run through the following steps:
 
-- Download new binary from **_N/A_** or obtain it from a reputable source.
-- Apply environment variables: `source ~/.profile` (refer to [README](../README.md) if you do not have this).
-- Register the upgrade: `cosmovisor add-upgrade vesting-accounts-staking <path-to-downloaded-fuelsequencerd-binary>`.
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3`.
+- Apply Cosmovisor environment variables: `source ~/.profile`. These might already be applied through `~/.bashrc` or `~/.zshrc`. Refer to [install cosmovisor section](./RUN_NODE.md#install-cosmovisor) if in doubt.
+- Register the upgrade: `cosmovisor add-upgrade features-and-optimisations <path-to-downloaded-fuelsequencerd-binary>`.
 - From here on, the upgrade process is expected to take place automatically.
 
-### Upgrade Instructions (without Cosmovisor)
+#### Without Cosmovisor
 
 The recommended steps to upgrade to the new version without Cosmovisor are as follows:
 
-- Download new binary from **_N/A_** or obtain it from a reputable source.
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3`.
 - At the upgrade height, once your node has stopped automatically, back up the `.fuelsequencer` directory, especially the `.fuelsequencer/data/priv_validator_state.json` file.
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.
 
-### Sidecar
+### Sidecar Upgrade Instructions
 
-It is not critical to use the new binary for the Sidecar, however this is still recommended, to have a consistent binary version.
+It is critical to switch to use the new binary for the Sidecar as well. You will need to follow these steps:
+
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3`.
+- Before the upgrade height (i.e. you can do it NOW since the sidecar is backwards compatible):
+  - Stop the Sidecar process.
+  - Swap the old binary with the downloaded binary.
+  - Restart the Sidecar process.
 
 ### Recovery
 
