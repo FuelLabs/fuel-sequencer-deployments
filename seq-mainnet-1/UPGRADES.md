@@ -1,10 +1,11 @@
 # Scheduled Upgrades
 
 - [Features and Optimisations](#features-and-optimisations)
-  - [Node Upgrade Instructions](#node-upgrade-instructions)
+- [Upgrade Instructions](#upgrade-instructions)
+  - [Sidecar](#sidecar)
+  - [Sequencer Node](#sequencer-node)
     - [With Cosmovisor](#with-cosmovisor)
     - [Without Cosmovisor](#without-cosmovisor)
-  - [Sidecar Upgrade Instructions](#sidecar-upgrade-instructions)
   - [Recovery](#recovery)
 
 ## Features and Optimisations
@@ -14,7 +15,26 @@
 - **Upgrade height**: **`2988700`**
 - **Estimated upgrade time**: `2025-06-09 15:00:00 CET`
 
-### Node Upgrade Instructions
+## Upgrade Instructions
+
+The [Sidecar](#sidecar) is backwards compatible with the version before the upgrade, so it is **strongly recommended** to upgrade it beforehand.
+
+Problems might arise if a previous sidecar is running with the upgraded sequencer.
+
+The [Sequencer](#sequencer-node) is intended to be upgraded post-upgrade height.
+
+### Sidecar
+
+It is critical to switch to use the new binary for the Sidecar as well. You will need to follow these steps:
+
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3`.
+- Before the upgrade height (i.e. you can do it NOW since the sidecar is backwards compatible):
+  - Stop the Sidecar process.
+  - Swap the old binary with the downloaded binary.
+  - Restart the Sidecar process.
+
+### Sequencer Node
 
 #### With Cosmovisor
 
@@ -39,17 +59,6 @@ The recommended steps to upgrade to the new version without Cosmovisor are as fo
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.
 - Make sure to also follow the *Sidecar Upgrade Instructions* if you're running the Sidecar.
-
-### Sidecar Upgrade Instructions
-
-It is critical to switch to use the new binary for the Sidecar as well. You will need to follow these steps:
-
-- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3) or obtain it from a reputable source.
-- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3`.
-- Before the upgrade height (i.e. you can do it NOW since the sidecar is backwards compatible):
-  - Stop the Sidecar process.
-  - Swap the old binary with the downloaded binary.
-  - Restart the Sidecar process.
 
 ### Recovery
 
