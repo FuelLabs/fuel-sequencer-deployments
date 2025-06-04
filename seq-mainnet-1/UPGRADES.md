@@ -38,6 +38,7 @@ It is critical to switch to use the new binary for the Sidecar as well. You will
 
 #### With Cosmovisor
 
+> [!CAUTION]
 > Note: the `DAEMON_ALLOW_DOWNLOAD_BINARIES` option is not possible. This means that the binary will NOT be downloaded automatically!
 
 You will need to run through the following steps:
