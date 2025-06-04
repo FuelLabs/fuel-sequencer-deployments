@@ -21,7 +21,7 @@ The [Sidecar](#sidecar) is backwards compatible with the version before the upgr
 
 Problems might arise if the current version of the sidecar is running with the upgraded sequencer.
 
-The [Sequencer](#sequencer-node) is intended to be upgraded post-upgrade height.
+The [Sequencer](#sequencer-node) is intended to be upgraded using the standard practice of upgrading at the upgrade height, via cosmovisor or otherwise.
 
 ### Sidecar
 
