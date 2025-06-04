@@ -17,7 +17,7 @@
 
 ## Upgrade Instructions
 
-The [Sidecar](#sidecar) is backwards compatible with the version before the upgrade, so it is **strongly recommended** to upgrade it beforehand.
+The [Sidecar](#sidecar) is backwards compatible with the version before the upgrade, so it is **strongly recommended** to upgrade it beforehand (i.e. you can do it NOW).
 
 Problems might arise if the current version of the sidecar is running with the upgraded sequencer.
 
