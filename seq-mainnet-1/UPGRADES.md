@@ -27,7 +27,7 @@ You will need to run through the following steps:
 - Apply Cosmovisor environment variables: `source ~/.profile`. These might already be applied through `~/.bashrc` or `~/.zshrc`. Refer to [install cosmovisor section](./RUN_NODE.md#install-cosmovisor) if in doubt.
 - Register the upgrade: `cosmovisor add-upgrade features-and-optimisations <path-to-downloaded-fuelsequencerd-binary>`.
 - From here on, the upgrade process is expected to take place automatically.
-- Make sure to also follow the *Sidecar Upgrade Instructions* if you're running Sidecar.
+- Make sure to also follow the *Sidecar Upgrade Instructions* if you're running the Sidecar.
 
 #### Without Cosmovisor
 
@@ -38,7 +38,7 @@ The recommended steps to upgrade to the new version without Cosmovisor are as fo
 - At the upgrade height, once your node has stopped automatically, back up the `.fuelsequencer` directory, especially the `.fuelsequencer/data/priv_validator_state.json` file.
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.
-- Make sure to also follow the *Sidecar Upgrade Instructions* if you're running Sidecar.
+- Make sure to also follow the *Sidecar Upgrade Instructions* if you're running the Sidecar.
 
 ### Sidecar Upgrade Instructions
 
