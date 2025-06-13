@@ -8,7 +8,7 @@
 
 - **Chain ID**: `seq-mainnet-1`
 - **Launch date**: 2024-11-21
-- **Current binary version**: `seq-mainnet-1.3` or `seq-mainnet-1.3.1`
+- **Current binary version**: `seq-mainnet-1.3.*`, latest `seq-mainnet-1.3.2`
 - **Previous binary version**: `seq-mainnet-1.2` or `seq-mainnet-1.2-improved-sidecar`
 - **Launch binary version**: `seq-mainnet-1.1`
 - **Genesis file**: [genesis.json in this folder](./genesis.json).

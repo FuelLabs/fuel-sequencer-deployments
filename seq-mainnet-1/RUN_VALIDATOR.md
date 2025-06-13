@@ -7,7 +7,11 @@
   - [Install Cosmovisor](#install-cosmovisor)
   - [Configure State Sync](#configure-state-sync)
 - [Run the Sidecar](#run-the-sidecar)
+  - [Linux](#linux)
+  - [Mac](#mac)
 - [Run the Sequencer](#run-the-sequencer)
+  - [Linux](#linux-1)
+  - [Mac](#mac-1)
 - [Creating an Account](#creating-an-account)
 - [Create the Validator](#create-the-validator)
   - [What to Expect](#what-to-expect)
@@ -56,7 +60,7 @@ To ensure the highest performance and reliability of the Sequencer infrastructur
 
 Obtain binary and genesis from this repository:
 
-- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.2-improved-sidecar
+- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3.2
 - Genesis from: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/main/seq-mainnet-1/genesis.json
 
 Download the right binary based on your architecture to `$GOPATH/bin/` with the name `fuelsequencerd`:
@@ -69,7 +73,7 @@ Download the right binary based on your architecture to `$GOPATH/bin/` with the 
 Try the binary:
 
 ```sh
-fuelsequencerd version  # expect seq-mainnet-1.2-improved-sidecar
+fuelsequencerd version  # expect seq-mainnet-1.3.<PATCH>
 ```
 
 Initialise the node directory, giving your node a meaningful name:
