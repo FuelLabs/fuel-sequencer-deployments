@@ -5,6 +5,8 @@
   - [Install Cosmovisor](#install-cosmovisor)
   - [Configure State Sync](#configure-state-sync)
   - [Running the Sequencer](#running-the-sequencer)
+    - [Linux](#linux)
+    - [Mac](#mac)
 - [References](#references)
 
 ## Prerequisites
