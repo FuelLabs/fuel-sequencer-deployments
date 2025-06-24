@@ -64,7 +64,7 @@ Configure the node (part 1: `~/.fuelsequencer/config/app.toml`):
 Configure the node (part 2: `~/.fuelsequencer/config/config.toml`):
 
 - Configure `[p2p]`:
-  - Set `persistent_peers = "3a0b4118c01addd33d5add81783805d5add2fb17@80.64.208.17:26656"`.
+  - Set `persistent_peers = "25bd839624c4044764446a9241fbfb295d1e2233@80.64.208.18:26656,a2243658040b2c65a5d023a74093cf0bb20094e0@50.21.173.105:26656"`.
 - Configure `[mempool]`:
   - Set `max_tx_bytes = 1153434` (1.1MiB)
   - Set `max_txs_bytes = 23068670` (~22MiB)
