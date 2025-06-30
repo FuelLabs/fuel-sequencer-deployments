@@ -11,7 +11,7 @@
 ## Features and Optimisations
 
 - **Version before upgrade**: `seq-mainnet-1.2` or `seq-mainnet-1.2-improved-sidecar`
-- **Version after upgrade**: `seq-mainnet-1.3.*`, latest `seq-mainnet-1.3.2`
+- **Version after upgrade**: `seq-mainnet-1.3.*`, latest `seq-mainnet-1.3.3`
 - **Upgrade height**: **`2988700`**
 - **Estimated upgrade time**: `2025-06-09 15:00:00 CET`
 
@@ -27,8 +27,8 @@ The [Sequencer](#sequencer-node) is intended to be upgraded using the standard p
 
 It is critical to switch to use the new binary for the Sidecar as well. You will need to follow these steps:
 
-- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3.2) or obtain it from a reputable source.
-- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3.2`.
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3.3) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3.3`.
 - Before the upgrade height (i.e. you can do it NOW since the sidecar is backwards compatible):
   - Stop the Sidecar process.
   - Swap the old binary with the downloaded binary.
@@ -43,8 +43,8 @@ It is critical to switch to use the new binary for the Sidecar as well. You will
 
 You will need to run through the following steps:
 
-- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3.2) or obtain it from a reputable source.
-- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3.2`. If it doesn't work, you might need to make it executable, e.g. by running `chmod +x fuelsequencerd-seq-mainnet-1.3.2-<os>-<arch>`.
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3.3) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3.3`. If it doesn't work, you might need to make it executable, e.g. by running `chmod +x fuelsequencerd-seq-mainnet-1.3.3-<os>-<arch>`.
 - Apply Cosmovisor environment variables: `source ~/.profile`. These might already be applied through `~/.bashrc` or `~/.zshrc`. Refer to [install cosmovisor section](./RUN_NODE.md#install-cosmovisor) if in doubt.
 - Register the upgrade: `cosmovisor add-upgrade features-and-optimisations <path-to-downloaded-fuelsequencerd-binary>`.
 - From here on, the upgrade process is expected to take place automatically.
@@ -54,8 +54,8 @@ You will need to run through the following steps:
 
 The recommended steps to upgrade to the new version without Cosmovisor are as follows:
 
-- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3.2) or obtain it from a reputable source.
-- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3.2`. If it doesn't work, you might need to make it executable, e.g. by running `chmod +x fuelsequencerd-seq-mainnet-1.3.2-<os>-<arch>`.
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.3.3) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.3.3`. If it doesn't work, you might need to make it executable, e.g. by running `chmod +x fuelsequencerd-seq-mainnet-1.3.3-<os>-<arch>`.
 - At the upgrade height, once your node has stopped automatically, back up the `.fuelsequencer` directory, especially the `.fuelsequencer/data/priv_validator_state.json` file.
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.
