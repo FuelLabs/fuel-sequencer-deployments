@@ -1,13 +1,13 @@
 # Scheduled Upgrades
 
-- [Features and Optimisations](#features-and-optimisations)
+- [Multi-Vesting Accounts](#multi-vesting-accounts)
   - [Node Upgrade Instructions](#node-upgrade-instructions)
     - [With Cosmovisor](#with-cosmovisor)
     - [Without Cosmovisor](#without-cosmovisor)
   - [Sidecar Upgrade Instructions](#sidecar-upgrade-instructions)
   - [Recovery](#recovery)
 
-## Features and Optimisations
+## Multi-Vesting Accounts
 
 - **Version before upgrade**: `seq-testnet-2.2`
 - **Version after upgrade**: `seq-testnet-2.3`
@@ -26,7 +26,7 @@ You will need to run through the following steps:
 - Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.3) or obtain it from a reputable source.
 - You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.3`.
 - Apply Cosmovisor environment variables: `source ~/.profile`. These might already be applied through `~/.bashrc` or `~/.zshrc`. Refer to [install cosmovisor section](./RUN_NODE.md#install-cosmovisor) if in doubt.
-- Register the upgrade: `cosmovisor add-upgrade features-and-optimisations <path-to-downloaded-fuelsequencerd-binary>`.
+- Register the upgrade: `cosmovisor add-upgrade multi-vesting-accounts <path-to-downloaded-fuelsequencerd-binary>`.
 - From here on, the upgrade process is expected to take place automatically.
 
 #### Without Cosmovisor
