@@ -27,7 +27,7 @@ The guide assumes that Golang is installed in order to run Cosmovisor. We recomm
 
 Obtain binary and genesis from this repository:
 
-- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2-improved-sidecar
+- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.3
 - Genesis from: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/main/seq-testnet-2/genesis.json
 
 Download the right binary based on your architecture to `$GOPATH/bin/` with the name `fuelsequencerd`:
@@ -40,7 +40,7 @@ Download the right binary based on your architecture to `$GOPATH/bin/` with the 
 Try the binary:
 
 ```sh
-fuelsequencerd version  # expect seq-testnet-2-improved-sidecar
+fuelsequencerd version  # expect seq-testnet-2.3
 ```
 
 Initialise node directory:
