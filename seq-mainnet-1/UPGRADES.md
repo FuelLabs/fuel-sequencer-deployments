@@ -11,7 +11,7 @@
 ## Multi-Vesting Accounts
 
 - **Version before upgrade**: `seq-mainnet-1.3`, `seq-mainnet-1.3.1`, `seq-mainnet-1.3.2`, `seq-mainnet-1.3.3`
-- **Version after upgrade**: ``seq-mainnet-1.4`
+- **Version after upgrade**: `seq-mainnet-1.4`
 - **Upgrade height**: **`3829100`**
 - **Estimated upgrade time**: `2025-08-04 15:00:00 CET`
 - [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-mainnet/block/3829100)
@@ -52,7 +52,7 @@ While not critical, it is recommended to switch the Sidecar to use the new binar
 You will need to follow these steps:
 
 - Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.3) or obtain it from a reputable source.
-- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.3`.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-mainnet-1.4`.
 - Before the upgrade height (i.e. you can do it NOW since the sidecar is backwards compatible):
   - Stop the Sidecar process.
   - Swap the old binary with the downloaded binary.
