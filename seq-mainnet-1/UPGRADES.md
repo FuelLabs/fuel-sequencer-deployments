@@ -1,24 +1,21 @@
 # Scheduled Upgrades
 
-- [Multi-Vesting Accounts](#multi-vesting-accounts)
-- [Upgrade Instructions](#upgrade-instructions)
-- [Sequencer Node](#sequencer-node)
+- [Upgrade to seq-mainnet-1.5](#upgrade-to-seq-mainnet-15)
+  - [Node Upgrade Instructions](#node-upgrade-instructions)
     - [With Cosmovisor](#with-cosmovisor)
     - [Without Cosmovisor](#without-cosmovisor)
-- [Sidecar](#sidecar)
-- [Recovery](#recovery)
+  - [Sidecar Upgrade Instructions](#sidecar-upgrade-instructions)
+  - [Recovery](#recovery)
 
-## Multi-Vesting Accounts
+## Upgrade to seq-mainnet-1.5
 
 - **Version before upgrade**: `seq-mainnet-1.4`
 - **Version after upgrade**: `seq-mainnet-1.5`
-- **Upgrade height**: **`5253800`**
-- **Estimated upgrade time**: `2025-11-05 15:00:00 CET`
-- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-mainnet/block/5253800)
+- **Upgrade height**: **`5145600`**
+- **Estimated upgrade time**: `2025-10-29 at 14:00:00 UTC`
+- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-mainnet/block/5145600)
 
-## Upgrade Instructions
-
-## Sequencer Node
+### Node Upgrade Instructions
 
 #### With Cosmovisor
 
@@ -45,7 +42,7 @@ The recommended steps to upgrade to the new version without Cosmovisor are as fo
 - From here on, the upgrade process is expected to take place automatically.
 - Make sure to also follow the *Sidecar Upgrade Instructions* if you're running the Sidecar.
 
-## Sidecar
+### Sidecar Upgrade Instructions
 
 > [!IMPORTANT]
 > This is a breaking change upgrade. Both the Sequencer and Sidecar MUST be upgraded to `seq-mainnet-1.5`.
@@ -59,8 +56,8 @@ You will need to follow these steps:
   - Swap the old binary with the downloaded binary.
   - Restart the Sidecar process.
 
-## Recovery
+### Recovery
 
-In the event that the upgrade does not succeed, the network maintainers will coordinate the recovery of the network. 
+In the event that the upgrade does not succeed, the network maintainers will coordinate the recovery of the network.
 
 It is very important to be available and follow the instructions provided by the network maintainers.
