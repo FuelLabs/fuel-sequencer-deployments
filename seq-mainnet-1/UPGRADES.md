@@ -11,9 +11,9 @@
 
 - **Version before upgrade**: `seq-mainnet-1.4`
 - **Version after upgrade**: `seq-mainnet-1.5`
-- **Upgrade height**: **`5253800`**
-- **Estimated upgrade time**: `2025-11-05 15:00:00 CET`
-- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-mainnet/block/5253800)
+- **Upgrade height**: **`5145600`**
+- **Estimated upgrade time**: `2025-10-29 at 14:00:00 UTC`
+- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-mainnet/block/5145600)
 
 ### Node Upgrade Instructions
 

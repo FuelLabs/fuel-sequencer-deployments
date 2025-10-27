@@ -11,9 +11,9 @@
 
 - **Version before upgrade**: `seq-testnet-2.3`
 - **Version after upgrade**: `seq-testnet-2.4`
-- **Upgrade height**: **`5083800`**
-- **Estimated upgrade time**: `2025-10-29 at 15:00:00 CET` 
-- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-testnet/block/5083800)
+- **Upgrade height**: **`5070400`**
+- **Estimated upgrade time**: `2025-10-28 at 14:00:00 UTC`
+- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-testnet/block/5070400)
 
 ### Node Upgrade Instructions
 
