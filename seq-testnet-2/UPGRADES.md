@@ -1,13 +1,13 @@
 # Scheduled Upgrades
 
-- [Multi-Vesting Accounts](#multi-vesting-accounts)
+- [Upgrade to seq-testnet-2.4](#upgrade-to-seq-testnet-24)
   - [Node Upgrade Instructions](#node-upgrade-instructions)
     - [With Cosmovisor](#with-cosmovisor)
     - [Without Cosmovisor](#without-cosmovisor)
   - [Sidecar Upgrade Instructions](#sidecar-upgrade-instructions)
   - [Recovery](#recovery)
 
-## Multi-Vesting Accounts
+## Upgrade to seq-testnet-2.4
 
 - **Version before upgrade**: `seq-testnet-2.3`
 - **Version after upgrade**: `seq-testnet-2.4`
