@@ -60,7 +60,7 @@ To ensure the highest performance and reliability of the Sequencer infrastructur
 
 Obtain binary and genesis from this repository:
 
-- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.4
+- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.5
 - Genesis from: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/main/seq-testnet-2/genesis.json
 
 Download the right binary based on your architecture to `$GOPATH/bin/` with the name `fuelsequencerd`:
@@ -73,7 +73,7 @@ Download the right binary based on your architecture to `$GOPATH/bin/` with the 
 Try the binary:
 
 ```sh
-fuelsequencerd version  # expect seq-testnet-2.4
+fuelsequencerd version  # expect seq-testnet-2.5
 ```
 
 Initialise the node directory, giving your node a meaningful name:
