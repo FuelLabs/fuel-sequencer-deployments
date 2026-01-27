@@ -12,9 +12,9 @@
 - **Version before upgrade**: `seq-testnet-2.4`
 - **Version after upgrade**: `seq-testnet-2.5`
 - **Upgrade name**: `maintenance-patch-202601` (Register this name for the Cosmovisor upgrade)
-- **Upgrade height**: **`6537300`**
-- **Estimated upgrade time**: [2026-01-28 14:00:00 +0100 CET](https://dateful.com/convert/central-european-time-cet?t=14&d=2026-01-28)
-- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-testnet/block/6537300)
+- **Upgrade height**: **`6538300`**
+- **Estimated upgrade time**: [2026-01-28 15:30:00 +0100 CET](https://dateful.com/convert/central-european-time-cet?t=1530&d=2026-01-28)
+- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-testnet/block/6538300)
 
 ### Node Upgrade Instructions
 
