@@ -28,7 +28,7 @@ You will need to run through the following steps:
 - Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.5) or obtain it from a reputable source.
 - You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.5`. If it doesn't work, you might need to make it executable, e.g. by running `chmod +x fuelsequencerd-seq-testnet-2.5-<os>-<arch>`.
 - Apply Cosmovisor environment variables: `source ~/.profile`. These might already be applied through `~/.bashrc` or `~/.zshrc`. Refer to [install cosmovisor section](./RUN_NODE.md#install-cosmovisor) if in doubt.
-- Register the upgrade: `cosmovisor add-upgrade <upgrade-name> <path-to-downloaded-fuelsequencerd-binary>`.
+- Register the upgrade: `cosmovisor add-upgrade <upgrade-name> <path-to-downloaded-fuelsequencerd-binary>`. The upgrade name is included in the summary at the top.
 - From here on, the upgrade process is expected to take place automatically.
 - Make sure to also follow the *Sidecar Upgrade Instructions* if you're running the Sidecar.
 
