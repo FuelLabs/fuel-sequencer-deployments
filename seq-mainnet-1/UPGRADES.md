@@ -12,9 +12,9 @@
 - **Version before upgrade**: `seq-mainnet-1.5`
 - **Version after upgrade**: `seq-mainnet-1.6`
 - **Upgrade name**: `maintenance-patch-202601` (Register this name for the Cosmovisor upgrade)
-- **Upgrade height**: **`6555700`**
+- **Upgrade height**: **`6571300`**
 - **Estimated upgrade time**: [2026-01-29 15:30:00 +0100 CET](https://dateful.com/convert/central-european-time-cet?t=1530&d=2026-01-29)
-- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-mainnet/block/6555700)
+- [Explorer Countdown](https://fuel-seq.simplystaking.xyz/fuel-mainnet/block/6571300)
 
 ### Node Upgrade Instructions
 
