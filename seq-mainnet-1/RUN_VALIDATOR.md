@@ -60,7 +60,7 @@ To ensure the highest performance and reliability of the Sequencer infrastructur
 
 Obtain binary and genesis from this repository:
 
-- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.6
+- Binary from: https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-mainnet-1.7
 - Genesis from: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/main/seq-mainnet-1/genesis.json
 
 Download the right binary based on your architecture to `$GOPATH/bin/` with the name `fuelsequencerd`:
@@ -73,7 +73,7 @@ Download the right binary based on your architecture to `$GOPATH/bin/` with the 
 Try the binary:
 
 ```sh
-fuelsequencerd version  # expect seq-mainnet-1.6
+fuelsequencerd version  # expect seq-mainnet-1.7
 ```
 
 Initialise the node directory, giving your node a meaningful name:

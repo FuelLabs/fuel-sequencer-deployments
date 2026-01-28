@@ -8,8 +8,8 @@
 
 - **Chain ID**: `seq-mainnet-1`
 - **Launch date**: 2024-11-21
-- **Current binary version**: `seq-mainnet-1.6`
-- **Previous binary version**: `seq-mainnet-1.5`
+- **Current binary version**: `seq-mainnet-1.7`
+- **Previous binary version**: `seq-mainnet-1.5`, `seq-mainnet-1.6`
 - **Launch binary version**: `seq-mainnet-1.1`
 - **Genesis file**: [genesis.json in this folder](./genesis.json).
 - **Minimum gas price**: `10fuel`
