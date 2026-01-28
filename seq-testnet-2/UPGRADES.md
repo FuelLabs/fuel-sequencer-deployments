@@ -8,13 +8,11 @@
 ## Upgrade to seq-testnet-2.6
 
 > [!NOTE]
-> seq-testnet-2.5 was a scheduled upgrade that as of this writing, has passed on the network.
+> `seq-testnet-2.5` was a scheduled upgrade that as of this writing, has been applied to the network.
 >
-> seq-testnet-2.6 includes patches for seq-testnet-2.5, but will not be a scheduled upgrade.
+> `seq-testnet-2.6` includes a patch for `seq-testnet-2.5`, but a scheduled upgrade (proposal) will NOT take place. Instead, this is a binary that you should apply now.
 >
-> Nonetheless, it is highly encouraged to patch to seq-testnet-2.6 from seq-testnet-2.5.
->
-> If upgrading from seq-testnet-2.4, you should upgrade to seq-testnet-2.5 first, and then to seq-testnet-2.6.
+> If you haven’t upgraded from `seq-testnet-2.4` yet, you should upgrade to `seq-testnet-2.5` first, by following this guide: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/7827840552713ad1413681213498f145355f547d/seq-testnet-2/UPGRADES.md. Afterwards you can apply the new binary for `seq-testnet-2.6`.
 
 - **Version before upgrade**: `seq-testnet-2.5`
 - **Version after upgrade**: `seq-testnet-2.6`
