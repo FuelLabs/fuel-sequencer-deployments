@@ -1,21 +1,21 @@
 # <!--Scheduled--> Upgrades
 
-- [Upgrade to seq-testnet-2.6](#upgrade-to-seq-testnet-26)
+- [Upgrade to seq-testnet-2.6.1](#upgrade-to-seq-testnet-261)
   - [Node Patching Instructions](#node-patching-instructions)
   - [Sidecar Upgrade Instructions](#sidecar-upgrade-instructions)
   - [Recovery](#recovery)
 
-## Upgrade to seq-testnet-2.6
+## Upgrade to seq-testnet-2.6.1
 
 > [!NOTE]
 > `seq-testnet-2.5` was a scheduled upgrade that as of this writing, has been applied to the network.
 >
-> `seq-testnet-2.6` includes a patch for `seq-testnet-2.5`, but a scheduled upgrade (proposal) will NOT take place. Instead, this is a binary that you should apply now.
+> `seq-testnet-2.6.1` includes a patch for `seq-testnet-2.5` and `seq-testnet-2.6`, but a scheduled upgrade (proposal) will NOT take place. Instead, this is a binary that you should apply now.
 >
-> If you haven’t upgraded from `seq-testnet-2.4` yet, you should upgrade to `seq-testnet-2.5` first, by following this guide: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/7827840552713ad1413681213498f145355f547d/seq-testnet-2/UPGRADES.md. Afterwards you can apply the new binary for `seq-testnet-2.6`.
+> If you haven’t upgraded from `seq-testnet-2.4` yet, you should upgrade to `seq-testnet-2.5` first, by following this guide: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/7827840552713ad1413681213498f145355f547d/seq-testnet-2/UPGRADES.md. Afterwards you can apply the new binary for `seq-testnet-2.6.1`. Binary `seq-testnet-2.6` is NOT valid and should be skipped.
 
-- **Version before upgrade**: `seq-testnet-2.5`
-- **Version after upgrade**: `seq-testnet-2.6`
+- **Version before upgrade**: `seq-testnet-2.5`, `seq-testnet-2.6`
+- **Version after upgrade**: `seq-testnet-2.6.1`
 <!-- - **Upgrade name**: `maintenance-patch-202601` (Register this name for the Cosmovisor upgrade)
 - **Upgrade height**: **`TBD`**
 - **Estimated upgrade time**: [TBD](https://dateful.com/convert/central-european-time-cet?TBD)
@@ -39,8 +39,8 @@ You will need to run through the following steps:
 
 The recommended steps to patch to the new version, is as follows:
 
-- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.6) or obtain it from a reputable source.
-- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.6`.
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.6.1) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.6.1`.
 - At the upgrade height, once your node has stopped automatically, back up the `.fuelsequencer` directory, especially the `.fuelsequencer/data/priv_validator_state.json` file.
 - Swap the old binary with the downloaded binary, and restart your node.
 - From here on, the upgrade process is expected to take place automatically.
@@ -55,8 +55,8 @@ The recommended steps to patch to the new version, is as follows:
 
 You will need to follow these steps:
 
-- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.6) or obtain it from a reputable source.
-- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.6`.
+- Download new binary from [this release](https://github.com/FuelLabs/fuel-sequencer-deployments/releases/tag/seq-testnet-2.6.1) or obtain it from a reputable source.
+- You can check that you downloaded the correct binary and that it works by running `fuelsequencerd-<...> version` which should give `seq-testnet-2.6.1`.
 <!-- - Before the upgrade height (i.e. you can do it NOW since the sidecar is backwards compatible): -->
 - For deploying the new version, you will need to:
   - Stop the Sidecar process.
