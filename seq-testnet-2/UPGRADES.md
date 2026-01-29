@@ -12,7 +12,7 @@
 >
 > `seq-testnet-2.6.1` includes a patch for `seq-testnet-2.5` and `seq-testnet-2.6`, but a scheduled upgrade (proposal) will NOT take place. Instead, this is a binary that you should apply now.
 >
-> If you haven’t upgraded from `seq-testnet-2.4` yet, you should upgrade to `seq-testnet-2.5` first, by following this guide: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/7827840552713ad1413681213498f145355f547d/seq-testnet-2/UPGRADES.md. Afterwards you can apply the new binary for `seq-testnet-2.6.1`. `seq-testnet-2.6` is not required and can be skipped.
+> If you haven’t upgraded from `seq-testnet-2.4` yet, you should upgrade to `seq-testnet-2.5` first, by following this guide: https://github.com/FuelLabs/fuel-sequencer-deployments/blob/7827840552713ad1413681213498f145355f547d/seq-testnet-2/UPGRADES.md. Afterwards you can apply the new binary for `seq-testnet-2.6.1`. Binary `seq-testnet-2.6` is NOT valid and should be skipped.
 
 - **Version before upgrade**: `seq-testnet-2.5`, `seq-testnet-2.6`
 - **Version after upgrade**: `seq-testnet-2.6.1`
