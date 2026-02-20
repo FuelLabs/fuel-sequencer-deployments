@@ -31,6 +31,7 @@ For a list of historical Sequencer upgrades, refer to the [upgrades doc](./UPGRA
 These are the main options for running the Sequencer:
 
 - [Run a Sequencer Full Node (non-Validator)](./RUN_NODE.md)
+- [Run a Sequencer Archive Node and migrate archive data](./ARCHIVE_NODE.md)
 - [Run a Sequencer Validator, which requires you to run a Sidecar and an Ethereum node as well](./RUN_VALIDATOR.md).
 
 > **IMPORTANT**: If you are running a validator in a sentry node architecture, you should follow the validator guide when setting up the sentry nodes as well. This is especially because your sentry nodes should be connected to a Sidecar as well. Otherwise, your validator's performance might suffer.
