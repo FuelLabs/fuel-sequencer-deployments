@@ -70,7 +70,7 @@ Recommended flow:
 3. Import archive data from an existing trusted archive node.
 4. Start the node and let it catch up from the imported height to head.
 
-Alternative (slow): start from genesis with archive mode enabled and no State Sync.
+Alternative (slow): start from genesis with archive mode enabled and no State Sync. This replays the entire chain and must pass through every historical upgrade. Use Cosmovisor with the required upgrade binaries (or binary download enabled), otherwise the node will halt at each upgrade height and require manual binary replacement and restart.
 
 ## Verify Sync and History
 
