@@ -3,6 +3,7 @@
 - [Prerequisites](#prerequisites)
 - [Run the Node](#run-the-node)
   - [Install Cosmovisor](#install-cosmovisor)
+  - [Configure Archive Mode (Optional)](#configure-archive-mode-optional)
   - [Configure State Sync](#configure-state-sync)
   - [Running the Sequencer](#running-the-sequencer)
     - [Linux](#linux)
@@ -130,6 +131,17 @@ cosmovisor init <path/to/fuelsequencerd>
 ```
 
 At this point `cosmovisor run` will be the equivalent of running `fuelsequencerd`, however you should _not_ run the node for now.
+
+### Configure Archive Mode (Optional)
+
+If you want this node to retain historical state instead of pruning old state, configure archive mode in `~/.fuelsequencer/config/app.toml`:
+
+- Set `pruning = "nothing"`.
+- Set `pruning-keep-recent = "0"`.
+- Set `pruning-keep-every = "0"`.
+- Set `pruning-interval = "0"`.
+
+For archive data export/import and fast bootstrap instructions, refer to the [archive node guide](./ARCHIVE_NODE.md).
 
 ### Configure State Sync
 
